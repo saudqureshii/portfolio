@@ -33,6 +33,7 @@ document.addEventListener("DOMContentLoaded", function() {
     document.querySelectorAll('.navbar .menu a').forEach(link => {
         link.addEventListener('click', () => {
             document.querySelector('.navbar .menu').classList.remove('active');
+            document.querySelector('.menu-btn i').classList.toggle("active");
         });
     });
     
