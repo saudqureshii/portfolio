@@ -700,7 +700,7 @@ section .title::after{
   }
 
 /* works section styling */
-.works .title::after{
+/* .works .title::after{
     content: "all projects";
 }
 .works .carousel .card{
@@ -773,7 +773,117 @@ section .title::after{
 .owl-dot.active,
 .owl-dot:hover{
     background: var(--primary-color)!important;
+} */
+
+
+.works .title::after {
+    content: "all projects";
 }
+
+/* Filter Buttons */
+.filter-buttons {
+    text-align: center;
+    margin-bottom: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.filter-btn {
+    border: 1px solid #000;
+    background: #fff;
+    color: #000;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+    background-color: var(--primary-color); /* var(--primary-color) */
+    color: white;
+}
+
+/* Grid Layout */
+.works-grid {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(1, 1fr); /* fallback to 1 */
+}
+
+@media (min-width: 480px) {
+    .works-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 cards on small devices */
+    }
+}
+
+@media (min-width: 992px) {
+    .works-grid {
+        grid-template-columns: repeat(3, 1fr); /* 3 cards on desktop */
+    }
+}
+.max-width {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+
+/* Card Styles */
+.card {
+    background: #222;
+    border-radius: 6px;
+    padding: 20px 16px;
+    text-align: center;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card:hover {
+    background: var(--primary-color);
+}
+
+.card .box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: 0.3s ease;
+}
+
+.card:hover .box {
+    transform: scale(1.05);
+}
+
+.card img {
+    height: 200px;
+    width: 100%;
+    object-fit: contain;
+    border-radius: 4px;
+}
+
+.card .text {
+    font-size: 20px;
+    font-weight: 400;
+    margin: 8px 0 5px 0;
+}
+
+.card p {
+    font-size: 14px;
+    font-weight: 100;
+}
+
+/* Responsive Controls */
+@media (max-width: 768px) {
+    .filter-btn {
+        flex: 1 1 45%;
+    }
+}
+
 
 /* contact section styling */
 .contact .title::after{
